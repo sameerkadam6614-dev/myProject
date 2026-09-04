@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fees Structure</title>
+
+    <style>
+
+        /* Remove default spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #222;
+            width: 100%;
+        }
+
+        /* Main page container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Headings */
+        h2 {
+            text-align: center;
+            background-color: #ffffff;
+            color: #222;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 6px;
+            font-size: clamp(20px, 4vw, 30px);
+        }
+
+        /* Table wrapper */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 40px;
+            background-color: white;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            background-color: white;
+        }
+
+        /* Table cells */
+        th,
+        td {
+            border: 1px solid black;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        /* Table heading */
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* First column */
+        td:first-child {
+            font-weight: bold;
+            background-color: #eeeeee;
+        }
+
+        /* Alternate rows */
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        /* Mouse hover */
+        tr:hover {
+            background-color: #e6f3ff;
+        }
+
+
+        /* =========================================
+           DESKTOP
+           ========================================= */
+
+        @media (min-width: 901px) {
+
+            .container {
+                padding: 30px;
+            }
+
+            table {
+                min-width: 0;
+            }
+
+            th,
+            td {
+                font-size: 16px;
+                padding: 14px;
+            }
+        }
+
+
+        /* =========================================
+           TABLET
+           ========================================= */
+
+        @media (min-width: 601px) and (max-width: 900px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            table {
+                min-width: 650px;
+            }
+
+            th,
+            td {
+                font-size: 15px;
+                padding: 10px;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 21px;
+                padding: 10px;
+                margin: 15px 0;
+            }
+
+            /*
+              The second table has 6 columns.
+              It can be swiped left/right on mobile.
+            */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table {
+                min-width: 650px;
+            }
+
+            th,
+            td {
+                font-size: 13px;
+                padding: 9px 8px;
+                white-space: nowrap;
+            }
+
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+           ========================================= */
+
+        @media (max-width: 400px) {
+
+            h2 {
+                font-size: 19px;
+            }
+
+            th,
+            td {
+                font-size: 12px;
+                padding: 8px 6px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================
+         FEES STRUCTURE
+         ========================= -->
+
+    <h2>Fees Structure</h2>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <tr>
+                <th>Branch</th>
+                <th>FY Commerce Fees</th>
+                <th>SY Commerce Fees</th>
+                <th>TY Commerce Fees</th>
+            </tr>
+
+            <tr>
+                <td>Bachelor of arts</td>
+                <td>33,000 rupees</td>
+                <td>36,000 rupees</td>
+                <td>39,000 rupees</td>
+            </tr>
+
+            <tr>
+                <td>BMS</td>
+                <td>33,000 rupees</td>
+                <td>36,000 rupees</td>
+                <td>39,000 rupees</td>
+            </tr>
+
+            <tr>
+                <td>Account and finance</td>
+                <td>33,000 rupees</td>
+                <td>36,000 rupees</td>
+                <td>39,000 rupees</td>
+            </tr>
+
+            <tr>
+                <td>Banking And Insurance</td>
+                <td>33,000 rupees</td>
+                <td>36,000 rupees</td>
+                <td>39,000 rupees</td>
+            </tr>
+
+        
+
+        </table>
+
+    </div>
+
+
+    <!-- =========================
+         CUT-OFF SCIENCE
+         ========================= -->
+
+    <h2>Cut-Off Commerce Branch</h2>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <tr>
+                <th>Branch / Year</th>
+                <th>Bachelor of Commerce</th>
+                <th>BMS</th>
+                <th>Account And Finanace</th>
+                <th>Banking And Insurance</th>
+              
+            </tr>
+
+            <tr>
+                <td>2025</td>
+                <td>60%</td>
+                <td>65%</td>
+                <td>70%</td>
+                <td>60%</td>
+                
+            </tr>
+
+            <tr>
+                <td>2024</td>
+                <td>60%</td>
+                <td>61%</td>
+                <td>67%</td>
+                <td>70%</td>
+                            </tr>
+
+            <tr>
+                <td>2023</td>
+                <td>62%</td>
+                <td>61%</td>
+                <td>60%</td>
+                <td>70%</td>
+                
+            </tr>
+
+            <tr>
+                <td>2022</td>
+                <td>69%</td>
+                <td>67%</td>
+                <td>62%</td>
+                <td>70%</td>
+                
+            </tr>
+
+            <tr>
+                <td>2021</td>
+                <td>69%</td>
+                <td>67%</td>
+                <td>62%</td>
+                <td>70%</td>
+                
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

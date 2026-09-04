@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, blue, black);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background-color: lightgrey;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .registration {
+            font-family: Algerian, Arial, sans-serif;
+            text-align: center;
+            border-bottom: 3px dashed black;
+            font-size: clamp(26px, 5vw, 40px);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .inputbox {
+            width: 100%;
+        }
+
+        .inputtext {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: black;
+        }
+
+        .inputbox input {
+            width: 100%;
+            height: 45px;
+            padding: 10px;
+            border: 1px solid #777;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            background-color: white;
+        }
+
+        .inputbox input:focus {
+            border: 2px solid blue;
+        }
+
+        .lastinput {
+            grid-column: 1 / -1;
+            width: 100%;
+            height: 50px;
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lastinput:hover {
+            background-color: darkblue;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .container {
+                padding: 18px;
+                margin-top: 10px;
+            }
+
+            .container2 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .lastinput {
+                grid-column: auto;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="registration">
+        Registration Form
+    </div>
+
+    <form
+        action="https://script.google.com/macros/s/AKfycbzCGAGIkJrImHS1JIP-czIs5T73zlouw4nDSjt0yyRhiPi_3UdGh5yferoDb1P5k4SB/exec"
+        method="post"
+        target="hiddenFrame"
+        onsubmit="return data()"
+    >
+
+        <div class="container2">
+
+            <div class="inputbox">
+                <label class="inputtext">Full Name</label>
+                <input type="text" name="Name" id="n1"
+                       placeholder="Enter your name" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">Address</label>
+                <input type="text" name="Adress" id="n2"
+                       placeholder="Enter your address" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">Email ID</label>
+                <input type="email" name="Email Id" id="n3"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">Phone No.</label>
+                <input type="tel" name="Phone No" id="n4"
+                       placeholder="Enter phone number"
+                       maxlength="10"
+                       inputmode="numeric"
+                       required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">Date Of Birth</label>
+                <input type="date" name="DOB" id="n5" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">Country Of Birth</label>
+                <input type="text" name="Birth Place" id="n6"
+                       placeholder="Enter your country" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">SSC Percentage</label>
+                <input type="number" name="Ssc Percentage" id="n7"
+                       min="0" max="100" step="0.01"
+                       placeholder="Enter SSC percentage" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">HSC Percentage</label>
+                <input type="number" name="Hsc Percentage" id="n8"
+                       min="0" max="100" step="0.01"
+                       placeholder="Enter HSC percentage" required>
+            </div>
+
+            <div class="inputbox">
+                <label class="inputtext">Aadhaar No.</label>
+                <input type="text" name="Adhar No" id="n9"
+                       placeholder="Enter Aadhaar number"
+                       maxlength="12"
+                       inputmode="numeric"
+                       required>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <input
+                class="lastinput"
+                type="submit"
+                value="SUBMIT"
+            >
+
+        </div>
+    </form>
+
+</div>
+
+<!-- Hidden iframe -->
+<iframe name="hiddenFrame" style="display:none;"></iframe>
+
+<script>
+
+function data() {
+
+    var a = document.getElementById("n1").value.trim();
+    var b = document.getElementById("n2").value.trim();
+    var c = document.getElementById("n3").value.trim();
+    var d = document.getElementById("n4").value.trim();
+    var e = document.getElementById("n5").value;
+    var f = document.getElementById("n6").value.trim();
+    var g = document.getElementById("n7").value;
+    var h = document.getElementById("n8").value;
+    var i = document.getElementById("n9").value.trim();
+
+    /* Empty field validation */
+    if (
+        a === "" ||
+        b === "" ||
+        c === "" ||
+        d === "" ||
+        e === "" ||
+        f === "" ||
+        g === "" ||
+        h === "" ||
+        i === ""
+    ) {
+        alert("All fields are mandatory");
+        return false;
+    }
+
+    /* Phone validation */
+    if (!/^[0-9]{10}$/.test(d)) {
+        alert("Phone number should contain exactly 10 digits");
+        return false;
+    }
+
+    /* Aadhaar validation */
+    if (!/^[0-9]{12}$/.test(i)) {
+        alert("Aadhaar number should contain exactly 12 digits");
+        return false;
+    }
+
+    /* SSC validation */
+    if (g < 0 || g > 100) {
+        alert("SSC percentage must be between 0 and 100");
+        return false;
+    }
+
+    /* HSC validation */
+    if (h < 0 || h > 100) {
+        alert("HSC percentage must be between 0 and 100");
+        return false;
+    }
+
+    /*
+       Form is valid.
+       First Google Sheet receives the data,
+       then success.html opens.
+    */
+    setTimeout(function() {
+        window.location.href = "succes.html";
+    }, 1500);
+
+    return true;
+}
+
+</script>
+
+</body>
+</html>
