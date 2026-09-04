@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- IMPORTANT FOR RESPONSIVE DESIGN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home Page</title>
+
+
+    <style>
+
+        /* =====================================
+           BASIC RESET
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: white;
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        .header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 15px;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        .college-name {
+            font-size: clamp(22px, 4vw, 38px);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .address {
+            font-size: clamp(14px, 2vw, 18px);
+        }
+
+
+        /* =====================================
+           NAVIGATION BAR
+        ===================================== */
+
+        .navbar {
+            width: 100%;
+            background-color: black;
+        }
+
+        .menu {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0;
+            list-style: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+        }
+
+        .menu > li {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .menu > li:hover {
+            background-color: darkgreen;
+        }
+
+
+        /* =====================================
+           DROPDOWN
+        ===================================== */
+
+        .dropdown {
+            display: none;
+
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+
+            min-width: 180px;
+
+            background-color: black;
+
+            z-index: 1000;
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown li {
+            display: block;
+            color: white;
+            padding: 12px 15px;
+            white-space: nowrap;
+        }
+
+        .dropdown li:hover {
+            background-color: green;
+        }
+
+        /* Show dropdown on hover */
+        .menu li:hover .dropdown {
+            display: block;
+        }
+
+
+        /* =====================================
+           HERO IMAGE
+        ===================================== */
+
+        .hero {
+            width: 100%;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* =====================================
+           CONTENT SECTIONS
+        ===================================== */
+
+        .content {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            width: 100%;
+
+            background-color: yellow;
+
+            text-align: center;
+
+            padding: 10px;
+
+            margin: 30px 0 15px 0;
+
+            font-size: clamp(20px, 3vw, 28px);
+        }
+
+        .section-text {
+            font-size: clamp(15px, 2vw, 18px);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================================
+           PHOTO GALLERY
+        ===================================== */
+
+        .gallery-container {
+
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 30px auto;
+
+            padding: 0 20px;
+
+            display: grid;
+
+            /* Desktop = 3 columns */
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .gallery {
+
+            width: 100%;
+
+            border: 1px solid white;
+
+            overflow: hidden;
+        }
+
+        .gallery img {
+
+            display: block;
+
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+        }
+
+
+        /* =====================================
+           ADMISSION NOTICE
+        ===================================== */
+
+        .admission {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 30px auto;
+
+            padding: 20px;
+
+            background-color: lightblue;
+
+            text-align: center;
+
+            font-size: clamp(18px, 3vw, 28px);
+
+        }
+
+
+        /* =====================================
+           PRINCIPAL SECTION
+        ===================================== */
+
+        .principal {
+
+            width: 100%;
+
+            max-width: 700px;
+
+            margin: 30px auto;
+
+            text-align: center;
+
+            padding: 0 15px;
+        }
+
+        .principal img {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            height: auto;
+
+            display: block;
+
+            margin: auto;
+
+        }
+
+        .principal-name {
+
+            margin-top: 10px;
+
+            font-size: 20px;
+
+            color: black;
+        }
+
+
+        /* =====================================
+           INFORMATION CONTENT
+        ===================================== */
+
+        .information {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 30px auto;
+
+            padding: 0 20px;
+
+        }
+
+        .information p {
+
+            font-size: clamp(15px, 2vw, 18px);
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+
+            text-align: justify;
+
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        .footer {
+
+            width: 100%;
+
+            background-color: blue;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            margin-top: 30px;
+
+        }
+
+        .footer p {
+
+            margin-bottom: 10px;
+
+            font-size: clamp(14px, 2vw, 17px);
+
+        }
+
+
+        /* =====================================
+           TABLET
+        ===================================== */
+
+        @media screen and (max-width: 900px) {
+
+            .menu > li {
+                padding: 12px 15px;
+                font-size: 16px;
+            }
+
+            /* Gallery becomes 2 columns */
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery img {
+                height: 220px;
+            }
+
+            .hero {
+                margin-top: 20px;
+            }
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media screen and (max-width: 600px) {
+
+            .header {
+                padding: 15px 10px;
+            }
+
+            .logo {
+
+                width: 100px;
+
+                height: 100px;
+
+                margin-bottom: 10px;
+            }
+
+
+            /* Navigation */
+
+            .menu {
+
+                display: flex;
+
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+            .menu > li {
+
+                width: 100%;
+
+                text-align: center;
+
+                padding: 12px;
+
+                border-bottom: 1px solid #333;
+            }
+
+
+            /* Mobile dropdown */
+
+            .dropdown {
+
+                position: static;
+
+                width: 100%;
+
+                min-width: 0;
+
+                margin-top: 10px;
+            }
+
+            .dropdown li {
+
+                text-align: center;
+
+                background-color: #222;
+            }
+
+
+            /* Hero */
+
+            .hero {
+
+                padding: 0 10px;
+
+                margin: 20px auto;
+            }
+
+            .hero img {
+
+                width: 100%;
+
+                height: auto;
+            }
+
+
+            /* Content */
+
+            .content {
+
+                padding: 0 10px;
+            }
+
+            .information {
+
+                padding: 0 10px;
+            }
+
+            .section-title {
+
+                margin-top: 20px;
+
+                padding: 8px;
+            }
+
+            .section-text {
+
+                font-size: 15px;
+            }
+
+
+            /* Gallery = 1 column */
+
+            .gallery-container {
+
+                grid-template-columns: 1fr;
+
+                padding: 0 10px;
+
+                gap: 20px;
+            }
+
+            .gallery img {
+
+                width: 100%;
+
+                height: auto;
+
+                max-height: 300px;
+
+                object-fit: cover;
+            }
+
+
+            /* Admission */
+
+            .admission {
+
+                margin: 20px 10px;
+
+                padding: 15px;
+
+                font-size: 12px;
+            }
+
+
+            /* Principal */
+
+            .principal {
+
+                padding: 0 10px;
+            }
+
+            .principal img {
+
+                width: 100%;
+
+                max-width: 350px;
+
+                height: auto;
+            }
+
+
+            /* Information */
+
+            .information p {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+
+                text-align: left;
+            }
+
+
+            /* Footer */
+
+            .footer {
+
+                padding: 20px 10px;
+            }
+
+        }
+
+
+        /* =====================================
+           VERY SMALL MOBILE
+        ===================================== */
+
+        @media screen and (max-width: 400px) {
+
+            .logo {
+
+                width: 80px;
+
+                height: 80px;
+            }
+
+            .menu > li {
+
+                font-size: 15px;
+
+                padding: 10px;
+            }
+
+            .information p {
+
+                font-size: 14px;
+            }
+
+            .footer p {
+
+                font-size: 13px;
+            }
+
+        }
+		
+		
+	
+    .contact-btn {
+        background-color: black;
+        color: white;
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .contact-btn:hover {
+        background-color: darkgreen;
+    }
+	
+	.contact-btn1 {
+        background-color: lightblue;
+        color: black;
+        padding: 20px 35px;
+        font-size: 26px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .contact-btn:hover {
+        background-color: darkgreen;
+    }
+
+
+    </style>
+
+</head>
+
+
+<body>  
+
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <img
+            src="logo.png"
+            alt="College Logo"
+            class="logo"
+        >
+
+        <h1 class="college-name">
+            Khedekar College Of Science And Commerce
+            (Empowered Autonomous)
+        </h1>
+
+        <p class="address">
+            Kamraj Nagar, Ghatkopar (East), Mumbai 400077
+        </p>
+
+    </header>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <nav class="navbar">
+
+        <ul class="menu">
+
+            <li>
+                Home
+            </li>
+			
+        
+            <li>
+              
+            <button onclick="openPage()" class="contact-btn">Contact Us</button>
+            </li>
+
+
+            <li>
+                Courses
+
+                <div class="dropdown">
+
+                    <ul>
+
+                        <li><button onclick="openPage1()" class="contact-btn">B.Commerce</button></li>
+
+                        <li><button onclick="openPage2()" class="contact-btn">B.Science</button></li>
+
+                        <li><button onclick="openPage3()" class="contact-btn">B.Arts</button></li>
+
+                    </ul>
+
+                </div>
+
+            </li>
+
+            <li><button onclick="openPage4()" class="contact-btn">About Us</button>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================
+         COLLEGE IMAGE
+    ====================================== -->
+
+    <div class="hero">
+
+        <img
+            src="colle.jpg"
+            alt="College"
+        >
+
+    </div>
+
+
+    <!-- =====================================
+         VISION / MISSION / OBJECTIVES
+    ====================================== -->
+
+    <main class="content">
+
+
+        <!-- VISION -->
+
+        <h2 class="section-title">
+            VISION
+        </h2>
+
+        <p class="section-text">
+            To become the center of excellence in Computer Science,
+            Information Technology, Commerce and Management.
+        </p>
+
+
+        <!-- MISSION -->
+
+        <h2 class="section-title">
+            MISSION
+        </h2>
+
+        <p class="section-text">
+
+            The College is committed to educate students in Science,
+            Technology, Commerce and other areas of scholarships and
+            encourage their active participation in the leadership of
+            the nation and the world.
+
+        </p>
+
+
+        <!-- OBJECTIVES -->
+
+        <h2 class="section-title">
+            OBJECTIVES
+        </h2>
+
+        <p class="section-text">
+
+            To develop self-disciplined motivated graduates through
+            integration of culture, science and technology.
+
+            <br><br>
+
+            To advance and enhance the existing and explore the new
+            programs with scholarly initiatives.
+
+            <br><br>
+
+            To seek solutions to socio-economic problems of the region
+            with global connections by promoting research and active
+            utilization of human resources.
+
+        </p>
+
+    </main>
+
+
+    <!-- =====================================
+         PHOTO GALLERY
+    ====================================== -->
+
+    <div class="gallery-container">
+
+        <div class="gallery">
+
+            <img
+                src="co1.jpg"
+                alt="College Image 1"
+            >
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="co2.jpg"
+                alt="College Image 2"
+            >
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="co3.jpg"
+                alt="College Image 3"
+            >
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="co4.jpg"
+                alt="College Image 4"
+            >
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="co5.jpg"
+                alt="College Image 5"
+            >
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="co6.jpg"
+                alt="College Image 6"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         ADMISSION<h5 class="admission">
+    ====================================== -->
+
+    <button onclick="openPage6()" class="contact-btn1">First Year Undergraduate Program Admission 2026-27</button>
+
+      
+
+    
+
+
+    <!-- =====================================
+         PRINCIPAL
+    ====================================== -->
+
+    <div class="principal">
+
+        <img
+            src="teacher.jpg"
+            alt="Principal"
+        >
+
+        <p class="principal-name">
+            Principal : mrs Khedekar
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         INFORMATION
+    ====================================== -->
+
+    <div class="information">
+
+        <h2 class="section-title">
+            Rooted in Values, Empowered for the Future
+        </h2>
+
+
+        <p>
+
+            The Academic Year 2026–27 marks another significant
+            milestone in the journey of Khedekar College of Arts,
+            Science and Commerce.
+
+            As we continue to embrace the transformative vision of
+            the National Education Policy (NEP) 2020, now fully
+            implemented across undergraduate and postgraduate
+            programmes, we are witnessing a new era of higher
+            education that emphasizes flexibility, multidisciplinary
+            learning, skill development, innovation, and holistic
+            growth.
+
+        </p>
+
+
+        <p>
+
+            Guided by our autonomous status and driven by a commitment
+            to academic excellence, we have continually expanded
+            opportunities for our students to prepare for the rapidly
+            evolving global landscape.
+
+            This year, we are proud to introduce several future-focused
+            programmes, including B.Com. in International Accounting
+            integrated with ACCA, B.Sc. Cyber Security, M.Sc. Cyber
+            Security, and a Postgraduate Diploma in Drone Operations.
+
+            These programmes have been thoughtfully designed to equip
+            students with industry-relevant competencies, global
+            perspectives, and emerging technological skills that are
+            increasingly sought after in today’s dynamic professional
+            environment.
+
+        </p>
+
+
+        <p>
+
+            As I reflect upon our institution’s journey, I am reminded
+            of the banyan tree—a symbol of wisdom, strength, resilience,
+            and continuous growth.
+
+            Its deep roots provide stability, while its expanding
+            branches reach towards new horizons.
+
+            Similarly, our college remains firmly grounded in its core
+            values while continuously adapting to the changing
+            educational ecosystem.
+
+            Every student who joins our institution becomes part of
+            this living legacy, nurtured through knowledge, values,
+            experiences, and opportunities that empower them to
+            flourish independently and contribute meaningfully to
+            society.
+
+        </p>
+
+
+        <p>
+
+            Established in 1963, R J College has proudly carried
+            forward a rich tradition of academic excellence for over
+            six decades.
+
+            Our autonomous status, granted by the University of Mumbai
+            and UGC in 2018, has enabled us to design innovative
+            curricula, adopt contemporary pedagogies, and respond
+            swiftly to the emerging needs of industry and society.
+
+            Our recent achievement of securing an ‘A’ Grade with a CGPA
+            of 3.10 in the Fourth Cycle of NAAC Reaccreditation further
+            reflects our unwavering commitment to quality education
+            and institutional development.
+
+        </p>
+
+    </div>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <p>
+            Copyright © All rights reserved. (2026)
+        </p>
+
+        <p>
+            UGC Guidelines |
+            UGC Faculty Corner |
+            UGC Student Corner |
+            University of Mumbai
+        </p>
+
+        <p>
+            Ragging Victim? 1800-180-5522 |
+            UGC NET
+        </p>
+
+        <p>
+            MAH SET
+        </p>
+
+        <p>
+            Khedekar College Mumbai
+        </p>
+
+    </footer>
+
+
+
+
+
+    <script>
+        function openPage() {
+            window.location.href = "h.html";
+        }
+    </script>
+	
+	<script>
+        function openPage1() {
+            window.location.href = "com_cutt.html";
+        }
+    </script>
+	
+	<script>
+        function openPage2() {
+            window.location.href = "scince_cutt.html";
+        }
+    </script>
+	
+	<script>
+        function openPage3() {
+            window.location.href = "art_cutt.html";
+        }
+    </script>
+	<script>
+        function openPage4() {
+            window.location.href = "about4.html";
+        }
+    </script>
+	<script>
+        function openPage6() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+
+</html>
